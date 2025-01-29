@@ -1,0 +1,46 @@
+/* navbar.module.css */
+.navbar {
+  background-color: #FFB7C5;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #444;
+  font-family: "Roboto", sans-serif;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #7FD1B9;
+}
+
+.tabs {
+  list-style: none;
+  display: flex; /* Ensure the list is horizontal */
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.tabs li a {
+  color: #4C3549;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s, background-color 0.3s;
+  padding: 0.5rem 1rem; /* Add padding for better click area */
+}
+
+.tabs li a:hover {
+  color: #4C3549;
+  background-color: #FFB7C5; /* Add background color on hover */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar.list {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
