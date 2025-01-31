@@ -1,29 +1,55 @@
 .homepage {
   background-image: url("/images/workout.jpg");
-  background-size: cover; /* Cover the entire background */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  height: 100vh; /* Ensure the background covers the full viewport height */
-  width: 100vw; /* Ensure the background covers the full viewport width */
-  margin: 0; /* Remove default margins */
-  padding: 0; /* Remove default padding */
+  background-size: cover; /* Ensures full background coverage */
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Flexbox for better centering */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .homepageCard {
-  background-color: white; /* Background color for the card */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-  border-radius: 8px; /* Rounded corners */
-  padding: 2rem; /* Padding inside the card */
-  text-align: center; /* Center-align the text */
-  position: absolute; /* Position the card */
-  top: 50%;
-  left: 50%;
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Center the card horizontally and vertically */
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  max-width: 90%; /* Ensure it fits on small screens */
+  width: 400px; /* Default width */
+  min-height: 250px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .homepage {
+    padding: 1rem; /* Prevents content from touching screen edges */
+  }
+
+  .homepageCard {
+    width: 90%; /* Makes the card adjust dynamically */
+    padding: 1.5rem; /* Reduce padding for small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .homepageCard {
+    width: 95%;
+    padding: 1rem;
+  }
 }
 
 .h1 {
   color: #64a6bd;
+  font-size: 1.8rem; /* Adjust font size for smaller screens */
+}
+
+@media (max-width: 480px) {
+  .h1 {
+    font-size: 1.5rem; /* Smaller font for mobile */
+  }
 }
