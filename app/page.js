@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar/navbar";
 import styles from "./page.module.css";
 import Calendar from "@/components/calendar/calendar";
+import CalendlyPopup from "@/components/calendly";
 
 export default function Home() {
   return (
@@ -10,7 +11,8 @@ export default function Home() {
         <h1 className={styles.h1}>
           Hi Kylynn! This is going to be your home page
         </h1>
-        <Calendar />
+        {/* <Calendar /> */}
+        <CalendlyPopup />
       </div>
     </div>
   );
