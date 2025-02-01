@@ -2,10 +2,11 @@
 import Navbar from "@/components/navbar/navbar";
 import CalendlyPopup from "@/components/calendly";
 import { Container, Row, Col } from "react-bootstrap";
+import Payment from "@/components/payment";
 
 export default function Home() {
-  return (
-    <Container
+  return (<>
+  <Container
       fluid
       className="d-flex flex-column min-vh-100"
       style={{
@@ -25,5 +26,8 @@ export default function Home() {
         </Col>
       </Row>
     </Container>
+    <Payment />
+  </>
+    
   );
 }
