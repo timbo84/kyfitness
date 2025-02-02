@@ -21,12 +21,10 @@ export default function Home() {
         <Col xs={12} md={8} lg={6}>
           <div className="text-center p-4 rounded shadow-lg bg-white">
             <h1 className="text-primary">Hi Kylynn! This is going to be your home page</h1>
-            <CalendlyPopup />
           </div>
         </Col>
       </Row>
     </Container>
-    <Payment />
   </>
     
   );

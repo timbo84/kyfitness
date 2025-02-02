@@ -61,6 +61,7 @@ const NavbarComponent = () => {
             <Nav.Link href="/programs" className="nav-link-custom">Programs</Nav.Link>
             <Nav.Link href="/calendly" className="nav-link-custom">Calendar</Nav.Link>
             <Nav.Link href="/contact" className="nav-link-custom">Contact</Nav.Link>
+            <Nav.Link href="/pay" className="nav-link-custom">PAY</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
