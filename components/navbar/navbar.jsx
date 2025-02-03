@@ -1,7 +1,5 @@
 //import styles from "./navbar.module.css"
 
-
-
 // export default function navbar() {
 //     return (
 //         <nav className={styles.navbar}>
@@ -16,7 +14,6 @@
 
 //     )
 // }
-
 
 "use client";
 import React, { useState, useEffect } from "react";
@@ -56,12 +53,24 @@ const NavbarComponent = () => {
         {/* Navbar Links */}
         <Navbar.Collapse id="navbar-nav" className="justify-content-center">
           <Nav className="gap-4">
-            <Nav.Link href="/" className="nav-link-custom">Home</Nav.Link>
-            <Nav.Link href="/about" className="nav-link-custom">About Me</Nav.Link>
-            <Nav.Link href="/programs" className="nav-link-custom">Programs</Nav.Link>
-            <Nav.Link href="/calendly" className="nav-link-custom">Calendar</Nav.Link>
-            <Nav.Link href="/contact" className="nav-link-custom">Contact</Nav.Link>
-            <Nav.Link href="/pay" className="nav-link-custom">PAY</Nav.Link>
+            <Nav.Link href="/" className="nav-link-custom">
+              Home
+            </Nav.Link>
+            <Nav.Link href="/about" className="nav-link-custom">
+              About Me
+            </Nav.Link>
+            <Nav.Link href="/programs" className="nav-link-custom">
+              Programs
+            </Nav.Link>
+            <Nav.Link href="/calendly" className="nav-link-custom">
+              Calendar
+            </Nav.Link>
+            <Nav.Link href="/contact" className="nav-link-custom">
+              Contact
+            </Nav.Link>
+            <Nav.Link href="/pay" className="nav-link-custom">
+              PAY
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

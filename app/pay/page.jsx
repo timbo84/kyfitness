@@ -1,20 +1,20 @@
 "use client";
 import Navbar from "@/components/navbar/navbar";
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import CheckoutForm from "@/components/checkout";
-import { loadStripe } from '@stripe/stripe-js';
-import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
 export default function Home() {
-
-  const stripePromise = loadStripe('pk_test_51QnUbt4YGDBpXQeTFA5gQQPoFN20bBnHQp6OX7oMupLO0kyXSch7k1UnhQvONzqy0Dqsziz45IWdVwuk7HpAWkeF00jel9xyrf');
-
+  const stripePromise = loadStripe(
+    "pk_test_51QnUbt4YGDBpXQeTFA5gQQPoFN20bBnHQp6OX7oMupLO0kyXSch7k1UnhQvONzqy0Dqsziz45IWdVwuk7HpAWkeF00jel9xyrf"
+  );
 
   useEffect(() => {
-      const stripe = stripePromise;
-      // You can now use the stripe instance to create payment elements
-    }, []);
+    const stripe = stripePromise;
+    // You can now use the stripe instance to create payment elements
+  }, []);
 
   return (
     <Container
