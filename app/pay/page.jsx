@@ -27,11 +27,17 @@ export default function Home() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <Navbar />
+      
       <Row className="justify-content-center align-items-center flex-grow-1">
         <Col xs={12} md={8} lg={6}>
-          <div className="text-center p-4 rounded shadow-lg bg-white">
-            <h1 className="text-primary">
+          <div className="p-4 rounded shadow-lg"
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.1)", // Light transparency
+              backdropFilter: "blur(5px)", // Adds a subtle blur for readability
+              border: "1px solid rgba(255, 255, 255, 0.3)", // Light border for definition
+              color: "#f1ffc4",
+            }}>
+            <h1>
               This is where you can pay for your session
             </h1>
             <Elements stripe={stripePromise}>

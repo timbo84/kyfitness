@@ -31,7 +31,7 @@ const CheckoutForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="card p-4 my-3">
+    <form onSubmit={handleSubmit} className="card p-4 my-3" style={{ color: "#f1ffc4", background: "#5d576b"  }}>
       <div className="form-group mb-3">
         <label htmlFor="card-element" className="form-label">
           Credit or Debit Card

@@ -5,6 +5,7 @@ import HeroSection from "@/components/HomePageCards/heroSection";
 import Services from "@/components/HomePageCards/services";
 import Testimonials from "@/components/HomePageCards/testimonials";
 import Navbar from "@/components/navbar/navbar";
+import WorkoutCalculator from "@/components/workoutCalculator";
 import { Container, Row, Col } from "react-bootstrap";
 
 export default function Home() {
@@ -21,29 +22,16 @@ export default function Home() {
           backgroundAttachment: "fixed",
         }}
       >
-        <Navbar />
-        <Row className="justify-content-center align-items-center flex-grow-1">
-          <Col xs={12} md={8} lg={6}>
-            <div
-              className="text-center p-4 rounded shadow-lg"
-              style={{
-                backgroundColor: "rgba(255, 255, 255, 0.6)", // Semi-transparent white
-                backdropFilter: "blur(5px)", // Glassmorphism effect
-              }}
-            >
-              <h1 className="text-primary">
-                Hi Kylynn! This is going to be your home page
-              </h1>
-            </div>
-          </Col>
-        </Row>
+        
+
         <HeroSection />
         <Services />
         <Testimonials />
-        <ContactForm />
+        <br />
+        <WorkoutCalculator />
       </Container>
 
-      <Footer />
+      
     </>
   );
 }

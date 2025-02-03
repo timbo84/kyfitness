@@ -3,12 +3,12 @@
 
 export default function Testimonials() {
     return (
-      <section className="container text-center py-5 bg-light">
+      <section className="container text-center py-5" style={{ color: "#f1ffc4", background: "#5d576b"  }}>
         <h2 className="fw-bold">What Our Clients Say</h2>
         <div id="testimonialCarousel" className="carousel slide mt-4" data-bs-ride="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <div className="card p-3 shadow">
+              <div className="card p-3 shadow" style={{background: "#dceed1"}}>
                 <p>"Best trainer I've ever had! I lost 20 pounds in 3 months!"</p>
                 <h6>- Sarah J.</h6>
               </div>
