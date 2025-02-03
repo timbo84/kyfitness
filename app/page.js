@@ -18,24 +18,31 @@ export default function Home() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
         }}
       >
         <Navbar />
         <Row className="justify-content-center align-items-center flex-grow-1">
           <Col xs={12} md={8} lg={6}>
-            <div className="text-center p-4 rounded shadow-lg bg-white">
+            <div
+              className="text-center p-4 rounded shadow-lg"
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.6)", // Semi-transparent white
+                backdropFilter: "blur(5px)", // Glassmorphism effect
+              }}
+            >
               <h1 className="text-primary">
                 Hi Kylynn! This is going to be your home page
               </h1>
             </div>
           </Col>
         </Row>
-
         <HeroSection />
         <Services />
         <Testimonials />
         <ContactForm />
       </Container>
+
       <Footer />
     </>
   );
