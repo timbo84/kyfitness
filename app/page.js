@@ -28,7 +28,7 @@ export default function Home() {
         <Services />
         <Testimonials />
         <br />
-        <WorkoutCalculator />
+  
       </Container>
 
       

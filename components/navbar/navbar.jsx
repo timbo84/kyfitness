@@ -71,6 +71,9 @@ const NavbarComponent = () => {
             <Nav.Link href="/pay" className="nav-link-custom">
               PAY
             </Nav.Link>
+            <Nav.Link href="/calculate" className="nav-link-custom">
+              MACRO Calculator
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
