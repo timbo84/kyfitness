@@ -18,8 +18,8 @@ export default function Home() {
       
       <Row className="justify-content-center align-items-center flex-grow-1">
         <Col xs={12} md={8} lg={6}>
-          <div className="text-center p-4 rounded shadow-lg bg-white">
-            <h1 className="text-primary">
+          <div className="text-center p-4 rounded shadow-lg" style={{ color: "#f1ffc4", background: "#5d576b"  }}>
+            <h1>
               Hi Kylynn! This is going to be your calendar page
             </h1>
             <CalendlyPopup />

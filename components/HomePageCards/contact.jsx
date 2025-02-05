@@ -4,7 +4,7 @@ export default function ContactForm() {
       <h2 className="text-center fw-bold" style={{ color: "#f1ffc4" }}>
         Get in Touch
       </h2>{" "}
-      {/* Changed text to white for visibility */}
+     
       <div className="row justify-content-center align-items-center flex-grow-1">
         <div className="col-md-6">
           <form

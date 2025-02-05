@@ -12,7 +12,7 @@ export default function Services() {
               </div>
             </div>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 mt-4">
             <div className="card shadow">
               <img src="/images/weightloss.jpg" className="card-img-top" alt="Weight Loss" />
               <div className="card-body" style={{ color: "#f1ffc4", background: "#5d576b" }}>
@@ -21,7 +21,7 @@ export default function Services() {
               </div>
             </div>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 mt-4">
             <div className="card shadow">
               <img src="/images/personal.jpg" className="card-img-top" alt="Online Coaching" />
               <div className="card-body" style={{ color: "#f1ffc4", background: "#5d576b"  }}>
