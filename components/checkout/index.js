@@ -38,7 +38,7 @@ const CheckoutForm = () => {
         </label>
         <CardElement id="card-element" className="form-control" />
       </div>
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="custom-btn">
         Pay
       </button>
     </form>

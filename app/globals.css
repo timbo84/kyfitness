@@ -70,3 +70,51 @@ a {
   color: #4C3549 !important;
   background-color: #FFA6B8 !important;
 }
+
+.parallax-section {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed; /* Enables parallax effect */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  color: #f1ffc4; /* Your theme color */
+}
+.custom-btn {
+  background: linear-gradient(135deg, #8884ff, #5d576b); /* Gradient */
+  color: #f1ffc4; /* Light text */
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.custom-btn:hover {
+  background: linear-gradient(135deg, #5d576b, #8884ff); /* Reverse gradient */
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.custom-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

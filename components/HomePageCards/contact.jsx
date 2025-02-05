@@ -53,15 +53,7 @@ export default function ContactForm() {
                 }}
               ></textarea>
             </div>
-            <button
-              type="submit"
-              className="btn btn-lg mt-3 w-100"
-              style={{
-                backgroundColor: "#8884ff",
-                color: "#fff",
-                border: "none",
-              }}
-            >
+            <button type="submit" className="custom-btn w-100">
               Send Message
             </button>
           </form>

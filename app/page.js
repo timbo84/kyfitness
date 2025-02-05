@@ -1,12 +1,9 @@
 "use client";
-import ContactForm from "@/components/HomePageCards/contact";
-import Footer from "@/components/HomePageCards/footer";
 import HeroSection from "@/components/HomePageCards/heroSection";
 import Services from "@/components/HomePageCards/services";
 import Testimonials from "@/components/HomePageCards/testimonials";
-import Navbar from "@/components/navbar/navbar";
-import WorkoutCalculator from "@/components/workoutCalculator";
-import { Container, Row, Col } from "react-bootstrap";
+
+import { Container } from "react-bootstrap";
 
 export default function Home() {
   return (
@@ -22,16 +19,11 @@ export default function Home() {
           backgroundAttachment: "fixed",
         }}
       >
-        
-
         <HeroSection />
         <Services />
         <Testimonials />
         <br />
-  
       </Container>
-
-      
     </>
   );
 }

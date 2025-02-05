@@ -123,16 +123,9 @@ const MacroCalculator = () => {
                 </div>
                 <button
                     type="submit"
-                    className="btn btn-primary rounded-pill mt-3"
-                    style={{
-                        background: "#8884ff",
-                        borderColor: "#8884ff",
-                        padding: "10px 20px",
-                        fontWeight: "bold",
-                        transition: "0.3s",
-                    }}
-                    onMouseOver={(e) => (e.target.style.opacity = "0.8")}
-                    onMouseOut={(e) => (e.target.style.opacity = "1")}
+                    className="custom-btn"
+                    
+                    
                 >
                     Calculate
                 </button>

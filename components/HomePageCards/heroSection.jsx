@@ -8,11 +8,9 @@ export default function HeroSection() {
               Get fit, stay healthy, and achieve your goals with personalized training plans.
             </p>
             <a 
-              href="#contact" 
-              className="btn btn-lg mt-3" 
-              style={{ backgroundColor: "#8884ff", color: "#fff", border: "none" }}
-            >
-              Get Started
+              href="/contact" >
+              <button className="custom-btn">Get Started</button>
+
             </a>
           </div>
           <div className="col-lg-6">
