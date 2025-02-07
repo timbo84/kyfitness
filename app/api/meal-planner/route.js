@@ -29,8 +29,8 @@ export async function POST(req) {
         headers: {
           "accept": "application/json",
           "Content-Type": "application/json",
-          "Edamam-Account-User": "cc9733d2",
-          "Authorization": "Basic Y2M5NzMzZDI6MjVmOWQ1NGZkZDIyNTgzODdjMGYxZGNmODNiMmI2YTQ="
+          "Edamam-Account-User": process.env.EDAMAM_APP_ID,
+          "Authorization": `Basic ${process.env.EDAMAM_API_KEY}`
         },
         body: JSON.stringify(requestBody)
       });
