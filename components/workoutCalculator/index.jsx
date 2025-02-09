@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
-import MealPlanGenerator from "./mealPlanGenerator";
+import MealPlanDisplay from "./mealPlanDisplay";
 import MealPlanForm from "./mealPlanForm";
-import MealPlanner from "./mealPlanner";
 
 const MacroCalculator = () => {
   const [weight, setWeight] = useState("");
@@ -12,7 +10,7 @@ const MacroCalculator = () => {
   const [gender, setGender] = useState("male");
   const [activity, setActivity] = useState("1.2");
   const [goal, setGoal] = useState("maintain");
-  const [diet, setDiet] = useState("vegetarian");
+  // const [diet, setDiet] = useState("vegetarian");
   const [meal, setMeal] = useState("lunch");
   const [macros, setMacros] = useState(null);
   const [mealPlan, setMealPlan] = useState([]);
@@ -68,26 +66,48 @@ const MacroCalculator = () => {
 
   const fetchMealPlan = async (macros) => {
     try {
-      const response = await fetch("/api/mealplan", {
+      const requestBody = {
+        minCalories: parseFloat(macros.totalCalories) * 0.9, // Allow a 10% range
+        maxCalories: parseFloat(macros.totalCalories) * 1.1,
+        minProtein: parseFloat(macros.protein) * 0.9,
+        maxProtein: parseFloat(macros.protein) * 1.1,
+        minFat: parseFloat(macros.fat) * 0.9,
+        maxFat: parseFloat(macros.fat) * 1.1,
+        minCarbs: parseFloat(macros.carbs) * 0.9,
+        maxCarbs: parseFloat(macros.carbs) * 1.1,
+        size: 3, // Number of meals
+        health: [], // Example health filter
+        cuisine: [], // Example cuisine preference
+      };
+
+      const response = await fetch("/api/meal-planner", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(macros),
+        body: JSON.stringify(requestBody),
       });
-  
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-  
+
       const data = await response.json();
-      console.log("Meal Plan Response:", data);
-      return data.mealPlan || [];
+
+      if (data.selection && data.selection.length > 0) {
+        console.log("✅ Meal Plan Data:", data.selection);
+
+        // Extract meals properly
+        const meals = data.selection.map((day, index) => ({
+          breakfast:
+            day.sections?.Breakfast?._links?.self?.href || "No breakfast found",
+          lunch: day.sections?.Lunch?._links?.self?.href || "No lunch found",
+          dinner: day.sections?.Dinner?._links?.self?.href || "No dinner found",
+        }));
+        console.log("Extracted meals:", meals);
+        setMealPlan(meals); // Update React state (assuming useState)
+      } else {
+        console.log("❌ No meals found in response");
+        setMealPlan([]); // Ensure UI updates properly
+      }
     } catch (error) {
       console.error("API Error:", error);
-      return [];
     }
   };
-  
-  
 
   return (
     <div className="container mt-5">
@@ -205,7 +225,7 @@ const MacroCalculator = () => {
             <option value="gain">Gain Muscle</option>
           </select>
         </div>
-        <div className="form-group mb-3">
+        {/* <div className="form-group mb-3">
           <label htmlFor="diet" className="form-label fw-bold">
             Diet Preference
           </label>
@@ -221,7 +241,7 @@ const MacroCalculator = () => {
             <option value="paleo">Paleo</option>
             <option value="none">None</option>
           </select>
-        </div>
+        </div> */}
         <button type="submit" className="custom-btn">
           Calculate
         </button>
@@ -249,12 +269,10 @@ const MacroCalculator = () => {
           </p>
           <p className="text-center fs-5">
             <strong>Carbs:</strong> {macros.carbs} grams
-          </p>
-          <MealPlanGenerator macros={macros} />
+          </p>{" "}
+          <MealPlanForm macros={macros} />
         </div>
       )}
-
-    <MealPlanner macros={macros} />
     </div>
   );
 };
