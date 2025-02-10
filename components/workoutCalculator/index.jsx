@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import MealPlanDisplay from "./mealPlanDisplay";
+
 import MealPlanForm from "./mealPlanForm";
 
 const MacroCalculator = () => {
@@ -10,18 +10,10 @@ const MacroCalculator = () => {
   const [gender, setGender] = useState("male");
   const [activity, setActivity] = useState("1.2");
   const [goal, setGoal] = useState("maintain");
-  // const [diet, setDiet] = useState("vegetarian");
+
   const [meal, setMeal] = useState("lunch");
   const [macros, setMacros] = useState(null);
   const [mealPlan, setMealPlan] = useState([]);
-
-  useEffect(() => {
-    if (macros) {
-      fetchMealPlan(macros).then((meals) => {
-        setMealPlan(meals || []);
-      });
-    }
-  }, [macros]);
 
   const calculateMacros = () => {
     const weight_kg = parseFloat(weight) * 0.453592;
@@ -62,51 +54,6 @@ const MacroCalculator = () => {
       fat: fat_grams.toFixed(2),
       carbs: carb_grams.toFixed(2),
     });
-  };
-
-  const fetchMealPlan = async (macros) => {
-    try {
-      const requestBody = {
-        minCalories: parseFloat(macros.totalCalories) * 0.9, // Allow a 10% range
-        maxCalories: parseFloat(macros.totalCalories) * 1.1,
-        minProtein: parseFloat(macros.protein) * 0.9,
-        maxProtein: parseFloat(macros.protein) * 1.1,
-        minFat: parseFloat(macros.fat) * 0.9,
-        maxFat: parseFloat(macros.fat) * 1.1,
-        minCarbs: parseFloat(macros.carbs) * 0.9,
-        maxCarbs: parseFloat(macros.carbs) * 1.1,
-        size: 3, // Number of meals
-        health: [], // Example health filter
-        cuisine: [], // Example cuisine preference
-      };
-
-      const response = await fetch("/api/meal-planner", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(requestBody),
-      });
-
-      const data = await response.json();
-
-      if (data.selection && data.selection.length > 0) {
-        console.log("✅ Meal Plan Data:", data.selection);
-
-        // Extract meals properly
-        const meals = data.selection.map((day, index) => ({
-          breakfast:
-            day.sections?.Breakfast?._links?.self?.href || "No breakfast found",
-          lunch: day.sections?.Lunch?._links?.self?.href || "No lunch found",
-          dinner: day.sections?.Dinner?._links?.self?.href || "No dinner found",
-        }));
-        console.log("Extracted meals:", meals);
-        setMealPlan(meals); // Update React state (assuming useState)
-      } else {
-        console.log("❌ No meals found in response");
-        setMealPlan([]); // Ensure UI updates properly
-      }
-    } catch (error) {
-      console.error("API Error:", error);
-    }
   };
 
   return (
@@ -225,23 +172,7 @@ const MacroCalculator = () => {
             <option value="gain">Gain Muscle</option>
           </select>
         </div>
-        {/* <div className="form-group mb-3">
-          <label htmlFor="diet" className="form-label fw-bold">
-            Diet Preference
-          </label>
-          <select
-            className="form-control rounded-pill"
-            id="diet"
-            value={diet}
-            onChange={(e) => setDiet(e.target.value)}
-          >
-            <option value="vegetarian">Vegetarian</option>
-            <option value="vegan">Vegan</option>
-            <option value="keto">Keto</option>
-            <option value="paleo">Paleo</option>
-            <option value="none">None</option>
-          </select>
-        </div> */}
+
         <button type="submit" className="custom-btn">
           Calculate
         </button>
