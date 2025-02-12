@@ -22,8 +22,25 @@ const programs = {
   },
 };
 
-export default function ProgramPage({ params }) {
-  const program = programs[params.program];
+
+
+export async function generateMetadata({ params }) {
+  const programKey = params.program; // Ensure params exist
+
+  if (!programKey || !programs[programKey]) {
+    return { title: "Not Found", description: "This program does not exist." };
+  }
+
+  return {
+    title: programs[programKey].title,
+    description: programs[programKey].description,
+  };
+}
+
+// ✅ Fix: Don't use `await` in the main function
+export default async function ProgramPage({ params }) {
+  const programKey = params.program; // No need for async/await
+  const program = programs[programKey];
 
   if (!program) {
     return notFound(); // Show 404 if program doesn't exist
