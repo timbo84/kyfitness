@@ -20,7 +20,7 @@ export default function Programs() {
       imgSrc: "/images/weightloss.jpg",
     },
     {
-      id: "personal",
+      id: "personal-coaching",
       title: "Personal Coaching",
       description:
         "A personal coach does more than create workouts—they craft a roadmap for your success, tailoring every session to your unique strengths, weaknesses, and goals. Whether you want to build muscle, lose weight, improve mobility, or boost athletic performance, a personalized plan ensures you reach your full potential.\n\nMore importantly, coaching isn’t just about what you do in the gym—it’s about having a partner in your fitness journey. Accountability, support, and expert guidance help break through plateaus and keep motivation high. With teamwork, we celebrate progress, overcome challenges, and make fitness a lifelong commitment.",

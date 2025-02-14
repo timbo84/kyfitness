@@ -9,7 +9,7 @@ export default function HeroSection() {
             </p>
             <a 
               href="/contact" >
-              <button className="custom-btn">Get Started</button>
+              <button className="custom-btn">Start Your Fitness Journey &rarr; </button>
 
             </a>
           </div>
