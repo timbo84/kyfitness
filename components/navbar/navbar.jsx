@@ -7,18 +7,22 @@ import Container from "react-bootstrap/Container";
 
 const NavbarComponent = () => {
   const [windowWidth, setWindowWidth] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
     const handleResize = () => setWindowWidth(window.innerWidth);
+    setIsMobile(window.innerWidth <= 992);
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const logoSize = windowWidth <= 992 ? 50 : 125;
+  
 
   return (
-    <Navbar expand="lg" className="navbar-custom">
+    <Navbar expand="lg" className={`navbar-custom ${isMobile ? "fixed-top" : ""}`}>
       <Container fluid="xl" className="d-flex justify-content-between">
         {/* Logo aligned to the left */}
         <div>
