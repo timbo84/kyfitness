@@ -6,15 +6,15 @@ export default function Footer() {
     >
       <p>
         © 2025 KY Fitness | Follow us on
-        <a href="#" className="text-warning mx-2">
+        <a href="https://www.instagram.com/kyky.roberts?igsh=b2RqMmE3eTRibTNk" className="text-warning mx-2">
           Instagram
         </a>{" "}
         |
-        <a href="#" className="text-warning mx-2">
+        <a href="https://www.facebook.com/kylynn.roberts.56?mibextid=ZbWKwL" className="text-warning mx-2">
           Facebook
         </a>{" "}
         |
-        <a href="#" className="text-warning mx-2">
+        <a href="https://www.snapchat.com/add/kykyrob1227?share_id=H7JfAZQ0mq4&locale=en-US" className="text-warning mx-2">
           Snapchat
         </a>{" "}
         | Created By: JYT Software
