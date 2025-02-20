@@ -64,6 +64,12 @@ const MacroCalculator = () => {
       >
         Macro Calculator
       </h2>
+      <h3
+        className="text-center mb-4"
+        style={{ color: "#f1ffc4", fontWeight: "bold" }}
+      >
+        (Please fill out whole form)
+      </h3>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -78,7 +84,7 @@ const MacroCalculator = () => {
       >
         <div className="form-group mb-3">
           <label htmlFor="weight" className="form-label fw-bold">
-            Weight (lbs)
+            Weight (lbs) *
           </label>
           <input
             type="number"
@@ -86,12 +92,13 @@ const MacroCalculator = () => {
             id="weight"
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
+            required
           />
         </div>
         <div className="form-group mb-3 d-flex gap-2">
           <div className="w-50">
             <label htmlFor="heightFeet" className="form-label fw-bold">
-              Height (feet)
+              Height (feet) *
             </label>
             <input
               type="number"
@@ -99,11 +106,12 @@ const MacroCalculator = () => {
               id="heightFeet"
               value={heightFeet}
               onChange={(e) => setHeightFeet(e.target.value)}
+              required
             />
           </div>
           <div className="w-50">
             <label htmlFor="heightInches" className="form-label fw-bold">
-              Height (inches)
+              Height (inches) *
             </label>
             <input
               type="number"
@@ -111,12 +119,13 @@ const MacroCalculator = () => {
               id="heightInches"
               value={heightInches}
               onChange={(e) => setHeightInches(e.target.value)}
+              required
             />
           </div>
         </div>
         <div className="form-group mb-3">
           <label htmlFor="age" className="form-label fw-bold">
-            Age
+            Age *
           </label>
           <input
             type="number"
@@ -124,17 +133,19 @@ const MacroCalculator = () => {
             id="age"
             value={age}
             onChange={(e) => setAge(e.target.value)}
+            required
           />
         </div>
         <div className="form-group mb-3">
           <label htmlFor="gender" className="form-label fw-bold">
-            Gender
+            Gender *
           </label>
           <select
             className="form-control rounded-pill"
             id="gender"
             value={gender}
             onChange={(e) => setGender(e.target.value)}
+            required
           >
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -142,13 +153,14 @@ const MacroCalculator = () => {
         </div>
         <div className="form-group mb-3">
           <label htmlFor="activity" className="form-label fw-bold">
-            Activity Level
+            Activity Level *
           </label>
           <select
             className="form-control rounded-pill"
             id="activity"
             value={activity}
             onChange={(e) => setActivity(e.target.value)}
+            required
           >
             <option value="1.2">Sedentary</option>
             <option value="1.375">Lightly active</option>
@@ -159,13 +171,14 @@ const MacroCalculator = () => {
         </div>
         <div className="form-group mb-3">
           <label htmlFor="goal" className="form-label fw-bold">
-            Fitness Goal
+            Fitness Goal *
           </label>
           <select
             className="form-control rounded-pill"
             id="goal"
             value={goal}
             onChange={(e) => setGoal(e.target.value)}
+            required
           >
             <option value="maintain">Maintain Weight</option>
             <option value="lose">Lose Weight</option>
