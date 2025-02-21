@@ -27,7 +27,7 @@ export default function Services() {
             <div className="card-body d-flex flex-column" style={{ color: "#f1ffc4", background: "#5d576b" }}>
               <h5 className="card-title">Weight Loss</h5>
               <p className="card-text mt-auto">Burn fat, build confidence, and transform your body with our proven weight loss programs.</p>
-              <Link href="/programs/weightloss" className="custom-btn text-decoration-none fw-bold">
+              <Link href="/programs/weight-loss" className="custom-btn text-decoration-none fw-bold">
                 Learn More <span className="ms-1"> &rarr; </span>
               </Link>
             </div>

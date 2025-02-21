@@ -3,6 +3,7 @@ import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "@/components/HomePageCards/footer";
 import NavbarComponent from "@/components/navbar/navbar";
+import Chatbot from "@/components/chatbot/chatbot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <NavbarComponent />
         {children}
+        <Chatbot />
         <Footer />
       </body>
 

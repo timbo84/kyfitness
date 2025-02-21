@@ -24,6 +24,7 @@
     "bootstrap": "^5.3.3",
     "framer-motion": "^12.4.2",
     "next": "15.1.4",
+    "openai": "^4.85.3",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.9",
     "react-calendly": "^4.3.1",
