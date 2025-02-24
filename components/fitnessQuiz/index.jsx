@@ -64,8 +64,10 @@ export default function AdvancedFitnessQuiz() {
   const [answers, setAnswers] = useState({});
   const [step, setStep] = useState(0);
   const [result, setResult] = useState(null);
+  const [error, setError] = useState("");
 
   const handleSelect = (questionId, value, multiSelect) => {
+    setError(""); // Clear error when user selects an option
     setAnswers((prev) => {
       if (multiSelect) {
         return {
@@ -79,10 +81,18 @@ export default function AdvancedFitnessQuiz() {
   };
 
   const nextStep = () => {
-    if (step < questions.length - 1) {
-      setStep((prev) => prev + 1);
-    } else {
-      handleResult();
+    try {
+      if (!answers[questions[step].id] || (Array.isArray(answers[questions[step].id]) && answers[questions[step].id].length === 0)) {
+        throw new Error("Please select an answer before proceeding.");
+      }
+
+      if (step < questions.length - 1) {
+        setStep((prev) => prev + 1);
+      } else {
+        handleResult();
+      }
+    } catch (error) {
+      setError(error.message);
     }
   };
 
@@ -90,7 +100,7 @@ export default function AdvancedFitnessQuiz() {
     let selectedGoal = answers.goal;
     let workoutPreference = answers["workout-type"] || [];
 
-    let program = "general-fitness"; 
+    let program = "general-fitness";
 
     if (selectedGoal === "strength") {
       program = "strength";
@@ -140,6 +150,7 @@ export default function AdvancedFitnessQuiz() {
                   {option.text}
                 </button>
               ))}
+              {error && <p className="fw-bold mt-2" style={{ color: "#ff6868" }}>{error}</p>}
               <div className="mt-3">
                 <button onClick={nextStep} className="custom-btn">Next</button>
               </div>
