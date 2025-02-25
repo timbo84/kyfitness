@@ -1,53 +1,69 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+
+const programs = {
+  "strength": {
+    title: "Strength Training",
+    description: "Build strength, boost endurance, and unlock your full potential with expert training.",
+    image: "/images/strength.jpg",
+  },
+  "weight-loss": {
+    title: "Weight Loss",
+    description: "Burn fat, build confidence, and transform your body with our proven weight loss programs.",
+    image: "/images/weightloss.jpg",
+  },
+  "personal-coaching": {
+    title: "Personal Coaching",
+    description: "Achieve your goals with expert guidance and a strong support system—because fitness is a team effort.",
+    image: "/images/personal.jpg",
+  },
+  "endurance": {
+    title: "Endurance Training",
+    description: "Increase stamina, boost cardiovascular strength, and push your limits with structured endurance training.",
+    image: "/images/endurance.jpg",
+  },
+  "general-fitness": {
+    title: "General Fitness",
+    description: "Stay active, move better, and build a healthier lifestyle with a balanced fitness approach.",
+    image: "/images/general-fitness.jpg",
+  },
+  "hiit-weight-loss": {
+    title: "HIIT for Weight Loss",
+    description: "Torch calories, improve endurance, and get results fast with high-intensity interval training.",
+    image: "/images/hiit-weight-loss.jpg",
+  },
+  "calisthenics-strength": {
+    title: "Calisthenics Strength",
+    description: "Master bodyweight training, gain flexibility, and develop full-body control through calisthenics.",
+    image: "/images/calisthenics-strength.jpg",
+  },
+};
+
 export default function Services() {
   return (
     <section className="container text-center py-5">
       <h2 className="fw-bold" style={{ color: "#f1ffc4" }}>Our Training Programs</h2>
       <div className="row mt-4">
-        {/* Strength Training */}
-        <motion.div className="col-md-4" whileHover={{ scale: 1.05 }}>
+      {Object.entries(programs).map(([key, program], index) => (
+        <motion.div 
+          key={key} 
+          className={`col-md-4 ${index > 2 ? "mt-4" : ""}`} 
+          whileHover={{ scale: 1.05 }}
+        >
           <div className="card shadow h-100">
-            <img src="/images/strength.jpg" className="card-img-top" alt="Strength Training" />
+            <img src={program.image} className="card-img-top" alt={program.title} />
             <div className="card-body d-flex flex-column" style={{ color: "#f1ffc4", background: "#5d576b" }}>
-              <h5 className="card-title">Strength Training</h5>
-              <p className="card-text mt-auto">Build strength, boost endurance, and unlock your full potential with expert training.</p>
-              <Link href="/programs/strength" className="custom-btn text-decoration-none fw-bold">
+              <h5 className="card-title">{program.title}</h5>
+              <p className="card-text mt-auto">{program.description}</p>
+              <Link href={`/programs/${key}`} className="custom-btn text-decoration-none fw-bold">
                 Learn More <span className="ms-1"> &rarr; </span>
               </Link>
             </div>
           </div>
         </motion.div>
-
-        {/* Weight Loss */}
-        <motion.div className="col-md-4 mt-4 mt-md-0" whileHover={{ scale: 1.05 }}>
-          <div className="card shadow h-100">
-            <img src="/images/weightloss.jpg" className="card-img-top" alt="Weight Loss" />
-            <div className="card-body d-flex flex-column" style={{ color: "#f1ffc4", background: "#5d576b" }}>
-              <h5 className="card-title">Weight Loss</h5>
-              <p className="card-text mt-auto">Burn fat, build confidence, and transform your body with our proven weight loss programs.</p>
-              <Link href="/programs/weight-loss" className="custom-btn text-decoration-none fw-bold">
-                Learn More <span className="ms-1"> &rarr; </span>
-              </Link>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Personal Coaching */}
-        <motion.div className="col-md-4 mt-4 mt-md-0" whileHover={{ scale: 1.05 }}>
-          <div className="card shadow h-100">
-            <img src="/images/personal.jpg" className="card-img-top" alt="Personal Coaching" />
-            <div className="card-body d-flex flex-column" style={{ color: "#f1ffc4", background: "#5d576b" }}>
-              <h5 className="card-title">Personal Coaching with a Team Mindset</h5>
-              <p className="card-text mt-auto">Achieve your goals with expert guidance and a strong support system—because fitness is a team effort.</p>
-              <Link href="/programs/personal-coaching" className="custom-btn text-decoration-none fw-bold">
-                Learn More <span className="ms-1"> &rarr; </span>
-              </Link>
-            </div>
-          </div>
-        </motion.div>
-      </div>
+      ))}
+    </div>
     </section>
   );
 }
