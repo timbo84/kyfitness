@@ -21,8 +21,8 @@ export default function HomeCTA() {
       }, 40);
     };
 
-    animateNumbers(setClients, 100);
-    animateNumbers(setWorkouts, 5000);
+    animateNumbers(setClients, 5);
+    animateNumbers(setWorkouts, 1000);
     animateNumbers(setReviews, 50);
   }, []);
 
@@ -53,10 +53,10 @@ export default function HomeCTA() {
           <h3 className="fw-bold">{workouts}+</h3>
           <p>Workouts Completed</p>
         </div>
-        <div className="col-md-4">
+        {/* <div className="col-md-4">
           <h3 className="fw-bold">{reviews}+</h3>
           <p>5-Star Reviews</p>
-        </div>
+        </div> */}
       </div>
       <br />
       {/* Free Consultation CTA */}

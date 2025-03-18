@@ -17,7 +17,7 @@ const CalendlyPopup = () => {
   return (
     <div
       className="calendly-inline-widget"
-      data-url="https://calendly.com/timber110406/30min"
+      data-url="https://calendly.com/kylynn77/30min"
       style={{ minWidth: "320px", height: "700px" }}
     />
   );

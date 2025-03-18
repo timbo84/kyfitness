@@ -35,9 +35,9 @@ export default function Testimonials() {
       <div id="testimonialCarousel" className="carousel slide mt-4">
         <div className="carousel-inner">
           {[
-            { text: `"Best trainer I've ever had! I lost 20 pounds in 3 months!"`, author: "- Sarah J." },
-            { text: `"Great workouts and personalized meal plans that actually work!"`, author: "- James L." },
-            { text: `"Helped me build muscle and stay consistent with my fitness goals."`, author: "- Maria R." },
+            { text: `"Best trainer I've ever had! I lost 20 pounds in 3 months!"`, author: "- Madisyn R." },
+            { text: `"Great workouts and personalized meal plans that actually work!"`, author: "- A. J." },
+            { text: `"Helped me build muscle and stay consistent with my fitness goals."`, author: "- Izzie G." },
           ].map((testimonial, index) => (
             <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
               <motion.div
