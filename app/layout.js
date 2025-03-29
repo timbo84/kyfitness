@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "@/components/HomePageCards/footer";
 import NavbarComponent from "@/components/navbar/navbar";
 import Chatbot from "@/components/chatbot/chatbot";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <NavbarComponent />
         {children}
+        <Analytics />
         <Chatbot />
         <Footer />
       </body>
