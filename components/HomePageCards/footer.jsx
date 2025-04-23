@@ -5,7 +5,7 @@ export default function Footer() {
       style={{ backgroundColor: "#5d576b" }}
     >
       <p>
-        © 2025 KY Fitness | Follow me on
+        © 2025 KyKy Fitness | Follow me on
         <a href="https://www.instagram.com/kyky.roberts?igsh=b2RqMmE3eTRibTNk" className="text-warning mx-2">
           Instagram
         </a>{" "}
